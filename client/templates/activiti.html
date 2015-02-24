@@ -1,0 +1,51 @@
+---
+name: activiti
+url: /activiti
+---
+<div class="grid-block">
+  <div id="sidebar" class="medium-4 grid-block"></div>
+  <div id="main" class="medium-8 grid-block ng-scope">
+    <h1>Activiti Dashboard</h1>
+    <div class=" grid-block small-up-2 medium-up-2 large-up-3">
+      <div class="grid-content">
+        <a ui-sref="activiti.vpn">
+          <div class="card">
+            <img src="http://www.canalgeek.fr/wp-content/uploads/2013/10/VPN1-300x259.png" style="height: 135px;">
+            <div class="card-divider">
+              Création VPN
+            </div>
+            <div class="card-section">
+              <h4>Créer un VPN pour un client</h4>
+              <p>Cette action permet de créer un VPN pour un client avec sa sortie sur Internet associée. On a besoin pour cela du nom du client, du nom technique du VPN, du subnet du VPN ainsi que de son route target.</p>
+            </div>
+        </a>
+      </div>
+    </div>
+    <div class="grid-content">
+      <div class="card">
+        <img src="http://www.arm.com/images/tpl/careers_office_icon.png" style="height: 135px;">
+        <div class="card-divider">
+          Création Site
+        </div>
+        <div class="card-section">
+          <h4>Créer un site pour un client</h4>
+          <p>Cette action permet de créer un site pour un client qui a déjà un VPN de créé. On a besoin pour cela du nom du client, du nom du site, du nom technique du VPN d'accès, du subnet du VPN d'accès ainsi que de son route target.</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-content">
+      <div class="card">
+        <img src="http://www.sophos.com/fr-fr/medialibrary/Images/Products/FreeTools/free-tools-utm-home-icon.png?la=fr-FR.png" style="height: 135px;">
+        <div class="card-divider">
+          Ajout Application
+        </div>
+        <div class="card-section">
+          <h4>Ajouter une application à un client</h4>
+          <p>Cette action permet d'ajouter une application à un site d'un client. On a besoin pour cela du nom du client, du nom du site  ainsi que du nom de l'application.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ui-view="" class=" grid-block">
+  </div>
+</div>

@@ -1,0 +1,24 @@
+---
+name: activiti.vpn
+url: /vpn
+controller: VpnController
+---
+<form>
+  <label>
+    Nom du Client
+    <input ng-model="vpn.client_name" type="text" placeholder="Text field">
+  </label>
+  <label>
+    Nom technique du Vpn
+    <input ng-model="vpn.vrf_name" type="text" placeholder="Text field">
+  </label>
+  <label>
+    Route Target
+    <input ng-model="vpn.core_rt" type="text" placeholder="Text field">
+  </label>
+  <label>
+    Subnet du VPN Coeur
+    <input ng-model="vpn.core_ip" type="text" placeholder="Text field">
+  </label>
+  <input type="submit" ng-click="update(user)" value="Créer" />
+</form>
