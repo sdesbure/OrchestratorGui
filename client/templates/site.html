@@ -1,10 +1,10 @@
 ---
-name: actions.vpn
-url: /vpn
-controller: VpnController
+name: actions.site
+url: /site
+controller: SiteController
 ---
 <div class="grid-content">
-  <h1> Création d'un VPN</h1>
+  <h1> Création d'un Site</h1>
   <div class="card">
     <div class="card-section">
       <form>
@@ -13,16 +13,20 @@ controller: VpnController
           <input ng-model="vpn.client_name" type="text" placeholder="Nom du Client">
         </label>
         <label>
-          Nom technique du Vpn
+          Nom du Site
+          <input ng-model="vpn.vrf_name" type="text" placeholder="Lannion">
+        </label>
+         <label>
+          Nom technique du Vpn du Site
           <input ng-model="vpn.vrf_name" type="text" placeholder="VRF Name">
         </label>
         <label>
-          Route Target
-          <input ng-model="vpn.core_rt" type="text" placeholder="65535:300">
+          Route Target du Vpn du Site
+          <input ng-model="vpn.core_rt" type="text" placeholder="65535:301">
         </label>
         <label>
           Subnet du VPN Coeur
-          <input ng-model="vpn.core_ip" type="text" placeholder="10.240.255.0/27">
+          <input ng-model="vpn.core_ip" type="text" placeholder="10.240.255.32/29">
         </label>
     </div>
     <div class="card-divider">

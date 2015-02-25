@@ -1,0 +1,34 @@
+---
+name: actions.app
+url: /app
+controller: ApplicationController
+---
+<div class="grid-content">
+  <h1> Création d'une Application</h1>
+  <div class="card">
+    <div class="card-section">
+      <form>
+        <label>
+          Nom du Client
+          <input ng-model="vpn.client_name" type="text" placeholder="Nom du Client">
+        </label>
+        <label>
+          Nom du Site
+          <input ng-model="vpn.vrf_name" type="text" placeholder="Nom du Site">
+        </label>
+        <label>
+          Application
+          <select name="" id="">
+            <option value="firewall">Firewall</option>
+            <option value="dpi">Reconnaissance d'Application</option>
+            <option value="antivirus">Antivirus</option>
+            <option value="webfiltering">Filtrage Web</option>
+          </select> 
+        </label>
+    </div>
+    <div class="card-divider">
+      <input class="button" type="submit" ng-click="update(user)" value="Créer" />
+    </div>
+      </form>
+  </div>
+</div>
