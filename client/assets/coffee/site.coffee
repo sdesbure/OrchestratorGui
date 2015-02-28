@@ -1,4 +1,4 @@
-class ApplicationController extends BaseCtrl
+class SiteController extends BaseCtrl
   @register orchestratorGui
   
   @inject '$scope', '$stateParams', '$state', '$controller'
