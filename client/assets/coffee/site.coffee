@@ -1,4 +1,4 @@
-class VpnController extends BaseCtrl
+class ApplicationController extends BaseCtrl
   @register orchestratorGui
   
   @inject '$scope', '$stateParams', '$state', '$controller'

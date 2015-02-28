@@ -37,11 +37,17 @@ var foundationJS = [
 ];
 var appCoffee = [
   'client/assets/coffee/vpn.coffee',
+  'client/assets/coffee/site.coffee',
+  'client/assets/coffee/application.coffee',
   'client/assets/coffee/base_ctrl.coffee'
 ];
 // These files are for your app's JavaScript
 var appJS = [
-  'client/assets/js/app.js'
+  'client/assets/js/app.js',
+  'client/assets/js/base_ctrl.js',
+  'client/assets/js/vpn.js',
+  'client/assets/js/site.js',
+  'client/assets/js/application.js',
 ];
 
 // 3. TASKS
@@ -98,7 +104,7 @@ gulp.task('coffee', function() {
     }).on('error', function(e) {
        console.log(e);
     }))
-    .pipe(gulp.dest('./build/assets/js/'))
+    .pipe(gulp.dest('./client/assets/js/'))
 });
 
 // Compiles and copies the Foundation for Apps JavaScript, as well as your app's custom JS
