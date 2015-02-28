@@ -8,6 +8,7 @@
 
 var gulp       = require('gulp'),
     $          = require('gulp-load-plugins')(),
+    coffee     =  require('gulp-coffee'),
     rimraf     = require('rimraf'),
     sequence   = require('run-sequence'),
     path       = require('path'),
@@ -33,6 +34,10 @@ var foundationJS = [
   'bower_components/foundation-apps/js/vendor/**/*.js',
   'bower_components/foundation-apps/js/angular/**/*.js',
   '!bower_components/foundation-apps/js/angular/app.js'
+];
+var appCoffee = [
+  'client/assets/coffee/vpn.coffee',
+  'client/assets/coffee/base_ctrl.coffee'
 ];
 // These files are for your app's JavaScript
 var appJS = [
@@ -84,6 +89,16 @@ gulp.task('sass', function() {
       browsers: ['last 2 versions', 'ie 10']
     }))
     .pipe(gulp.dest('./build/assets/css/'));
+});
+
+gulp.task('coffee', function() {
+  return gulp.src(appCoffee)
+    .pipe(coffee({
+      bare:true
+    }).on('error', function(e) {
+       console.log(e);
+    }))
+    .pipe(gulp.dest('./build/assets/js/'))
 });
 
 // Compiles and copies the Foundation for Apps JavaScript, as well as your app's custom JS
@@ -138,7 +153,7 @@ gulp.task('server:start', function() {
 
 // Builds your entire app once, without starting a server
 gulp.task('build', function() {
-  sequence('clean', ['copy', 'sass', 'uglify'], 'copy-templates', function() {
+  sequence('clean', ['copy', 'sass', 'coffee', 'uglify'], 'copy-templates', function() {
     console.log("Successfully built.");
   })
 });
@@ -151,7 +166,10 @@ gulp.task('default', ['build', 'server:start'], function() {
   // Watch JavaScript
   gulp.watch(['./client/assets/js/**/*', './js/**/*'], ['uglify']);
 
-  // Watch static files
+  // Watch CoffeeScript
+  gulp.watch(['./client/assets/coffee/**/*', './coffee/**/*'], ['coffee']);
+
+   // Watch static files
   gulp.watch(['./client/**/*.*', '!./client/templates/**/*.*', '!./client/assets/{scss,js}/**/*.*'], ['copy']);
 
   // Watch app templates

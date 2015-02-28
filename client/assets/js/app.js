@@ -31,7 +31,7 @@
     FastClick.attach(document.body);
   }
 
-  VpnController.$inject = ['$scope', '$stateParams', '$state', '$controller'];
+/*  VpnController.$inject = ['$scope', '$stateParams', '$state', '$controller'];
   function VpnController($scope, $stateParams, $state, $controller) {
     angular.extend(this, $controller('DefaultController', {$scope: $scope, $stateParams: $stateParams, $state: $state}));
 
@@ -40,6 +40,18 @@
     $scope.update = function(vpn) {
       $scope.master = angular.copy(vpn);
     };
-  }
+  }*/
+  angular.module('application').controller('VpnController', VpnController);
+
+  /*VpnController = VpnController.$inject = ['$scope', '$stateParams', '$state', '$controller'];
+  function VpnController($scope, $stateParams, $state, $controller) {
+    angular.extend(this, $controller('DefaultController', {$scope: $scope, $stateParams: $stateParams, $state: $state}));
+  }*/
+
+
+  //orchestratorGui.controller('BaseCtrl', BaseCtrl);
+
 
 })();
+
+var orchestratorGui = angular.module('application');
